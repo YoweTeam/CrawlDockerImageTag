@@ -1,11 +1,11 @@
 # CrawlDockerImageTag
-抓取Docker Hub官方镜像标签，依赖官方的API接口：https://hub.docker.com/
+Crawl image tags, from https://hub.docker.com/
 
-English language, Please Click: [English](README_en.md)
+中文，请点这里：[Chinese](README.md)
 
-更多其他内容，关注本人博客：https://www.yowe.net
+For more, follow my blog: https://www.yowe.net
 
-案例一：仅拉取官方的镜像分类
+Case 1: Pull only the image category
 ```
 	defer log.Sync()
 	if err := log.Init(&log.LogSettings{
@@ -39,7 +39,7 @@ English language, Please Click: [English](README_en.md)
 	fmt.Println(string(categoriesStr))
 ```
 
-案例二：拉取指定镜像分类下的镜像标签
+Case 2: Pull the image tag under the specified category
 ```
 	defer log.Sync()
 	if err := log.Init(&log.LogSettings{
@@ -61,7 +61,7 @@ English language, Please Click: [English](README_en.md)
 	// set the page size for each request
 	sizePage := 25
 
-	// specified category param
+	// single category label param
 	req := dto.SearchRequest{
 		Categories: "Web Servers",
 		Size:       fmt.Sprintf("%d", sizePage),
@@ -89,7 +89,7 @@ English language, Please Click: [English](README_en.md)
 	fmt.Println(string(retryPageStr))
 ```
 
-案例三：拉取官方镜像分类下的镜像标签
+Case 3: Pull the image tag under the official image category
 ```
 	defer log.Sync()
 	if err := log.Init(&log.LogSettings{
